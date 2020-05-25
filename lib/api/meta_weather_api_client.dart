@@ -32,8 +32,8 @@ class MetaWeatherApiClient{
       final locationJson = json.decode(locationResponse.body) as List;
       if (locationJson?.isNotEmpty == true){
         // parse the result and return
-        return Location(
-          title: locationJson.first['title'] as String,
+        return Location.fromJson(
+          locationJson.first
           
         );
       } else{
